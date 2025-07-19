@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Varun Bhasin - Portfolio</title>
+<script>
+tailwind.config = {
+    safelist: [
+        'gradient-text-purple-blue',
+        'tag-gradient-text',
+        'gradient-bg-purple-blue',
+        'glass-effect',
+        'nav-glass',
+        'card-hover',
+        'nav-button',
+        'nav-button active',
+        'profile-image',
+        'touch-button',
+        'contact-info',
+        'skill-card',
+        'text-responsive'
+    ]
+}
+</script>
+<script src="https://cdn.tailwindcss.com"></script>
+<link rel="stylesheet" href="style.css">
+<link href="https://cdnjs.cloudflare.com/ajax/libs/lucide/0.263.1/lucide.min.css" rel="stylesheet">
+<script src="https://unpkg.com/lucide@latest/dist/umd/lucide.js"></script>
+</head>
+<body class="bg-gradient-main min-h-screen">
+<div class="mobile-overlay" id="mobileOverlay" onclick="closeMobileNav()"></div>
+<nav class="fixed top-0 right-0 z-50 p-4 md:p-6" id="mainNav">
+    <div class="desktop-nav nav-glass rounded-2xl shadow-lg border border-white/20 p-2">
+        <div class="flex flex-col gap-1">
+            <button onclick="scrollToSection('hero')" class="nav-button justify-start px-4 py-2 rounded-lg text-sm font-medium" id="nav-hero">Home</button>
+            <button onclick="scrollToSection('about')" class="nav-button justify-start px-4 py-2 rounded-lg text-sm font-medium" id="nav-about">About</button>
+            <button onclick="scrollToSection('skills')" class="nav-button justify-start px-4 py-2 rounded-lg text-sm font-medium" id="nav-skills">Skills</button>
+            <button onclick="scrollToSection('education')" class="nav-button justify-start px-4 py-2 rounded-lg text-sm font-medium" id="nav-education">Education</button>
+            <button onclick="scrollToSection('projects')" class="nav-button justify-start px-4 py-2 rounded-lg text-sm font-medium" id="nav-projects">Projects</button>
+            <button onclick="scrollToSection('experience')" class="nav-button justify-start px-4 py-2 rounded-lg text-sm font-medium" id="nav-experience">Experience</button>
+            <button onclick="scrollToSection('contact')" class="nav-button justify-start px-4 py-2 rounded-lg text-sm font-medium" id="nav-contact">Contact</button>
+        </div>
+    </div>
+    <div class="hamburger" id="hamburger" onclick="toggleMobileNav()">
+        <span></span>
+        <span></span>
+        <span></span>
+    </div>
+</nav>
+<div class="mobile-nav" id="mobileNav">
+    <button onclick="closeMobileNav()" class="mobile-nav-close-button">
+        <i data-lucide="x" class="w-6 h-6"></i>
+    </button>
+    <div class="flex flex-col gap-3">
+        <button onclick="scrollToSectionMobile('hero')" class="nav-button text-left px-4 py-3 rounded-lg text-base font-medium" id="mobile-nav-hero">Home</button>
+        <button onclick="scrollToSectionMobile('about')" class="nav-button text-left px-4 py-3 rounded-lg text-base font-medium" id="mobile-nav-about">About</button>
+        <button onclick="scrollToSectionMobile('skills')" class="nav-button text-left px-4 py-3 rounded-lg text-base font-medium" id="mobile-nav-skills">Skills</button>
+        <button onclick="scrollToSectionMobile('education')" class="nav-button text-left px-4 py-3 rounded-lg text-base font-medium" id="mobile-nav-education">Education</button>
+        <button onclick="scrollToSectionMobile('projects')" class="nav-button text-left px-4 py-3 rounded-lg text-base font-medium" id="mobile-nav-projects">Projects</button>
+        <button onclick="scrollToSectionMobile('experience')" class="nav-button text-left px-4 py-3 rounded-lg text-base font-medium" id="mobile-nav-experience">Experience</button>
+        <button onclick="scrollToSectionMobile('contact')" class="nav-button text-left px-4 py-3 rounded-lg text-base font-medium" id="mobile-nav-contact">Contact</button>
+    </div>
+</div>
+<section id="hero" class="relative py-16 md:py-20 px-4 sm:px-6 lg:px-8 min-h-screen flex items-center">
+    <div class="max-w-4xl mx-auto text-center">
+        <div class="mb-8 animate-fade-in">
+            <div class="relative mb-6 md:mb-8">
+                <div class="absolute inset-0 bg-gradient-to-r from-purple-400 to-blue-400 rounded-full blur-2xl opacity-30 scale-110"></div>
+                <img src="https://hebbkx1anhila5yf.public.blob.vercel-storage.com/pic_nobg-IHT7UUoeNUss6i4ezo930vU00JkNKJ.png" alt="Varun Bhasin" class="profile-image relative rounded-full mx-auto shadow-2xl border-4 border-white w-32 h-32 md:w-48 md:h-48">
+            </div>
+            <h1 class="text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold gradient-text-purple-blue mb-4">Varun Bhasin</h1>
+            <p class="text-lg md:text-xl text-gray-700 mb-6 font-medium px-4">Computer Science Student & Aspiring Developer</p>
+            <div class="flex flex-wrap justify-center contact-info text-gray-600 mb-8 px-4">
+                <div class="flex items-center gap-2 glass-effect rounded-full px-3 md:px-4 py-2 shadow-sm text-sm md:text-base">
+                    <i data-lucide="mail" class="w-4 h-4 text-purple-600 flex-shrink-0"></i>
+                    <span class="truncate">varun200517@gmail.com</span>
+                </div>
+                <div class="flex items-center gap-2 glass-effect rounded-full px-3 md:px-4 py-2 shadow-sm text-sm md:text-base">
+                    <i data-lucide="phone" class="w-4 h-4 text-blue-600 flex-shrink-0"></i>
+                    <span>+91 9717208107</span>
+                </div>
+                <div class="flex items-center gap-2 glass-effect rounded-full px-3 md:px-4 py-2 shadow-sm text-sm md:text-base">
+                    <i data-lucide="map-pin" class="w-4 h-4 text-indigo-600 flex-shrink-0"></i>
+                    <span>New Delhi, India</span>
+                </div>
+            </div>
+            <div class="flex justify-center px-4">
+                <a href="https://www.linkedin.com/in/varun-bhasin-2937b9299/" target="_blank" rel="noopener noreferrer" class="touch-button glass-effect hover:bg-blue-50 border border-blue-200 px-4 md:px-6 py-2 rounded-lg text-sm font-medium transition-all duration-300 flex items-center gap-2">
+                    <i data-lucide="linkedin" class="w-4 h-4"></i>
+                    <span>LinkedIn</span>
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="about" class="py-16 md:py-20 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold gradient-text-purple-blue mb-8 md:mb-12 text-center">About Me</h2>
+        <div class="glass-effect shadow-xl border-0 rounded-lg p-6 md:p-8 card-hover">
+            <p class="text-gray-700 leading-relaxed text-responsive">
+                I'm a Computer Science student with a strong interest in building things that solve real-world problems.
+                I enjoy working with Java, Python, and C++, and have hands-on experience with both front-end and
+                back-end development. Whether it's creating simple tools with Python or exploring full-stack
+                development, I'm always eager to learn and take on new challenges. I'm also someone who works well in
+                teams, takes initiative, and genuinely enjoys the process of turning ideas into working code.
+            </p>
+        </div>
+    </div>
+</section>
+<section id="skills" class="py-16 md:py-20 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold gradient-text-purple-blue mb-8 md:mb-12 text-center">Skills</h2>
+        <div class="grid gap-4 md:gap-6 sm:grid-cols-2">
+            <div class="glass-effect shadow-lg border-0 rounded-lg card-hover skill-card">
+                <div class="p-4 md:p-6">
+                    <h3 class="text-base md:text-lg font-semibold gradient-text-purple-blue mb-3 md:mb-4">Programming Languages</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="gradient-border-purple-blue bg-white tag-gradient-text px-2 md:px-3 py-1 rounded-full text-xs md:text-sm font-medium">Java</span>
+                        <span class="gradient-border-purple-blue bg-white tag-gradient-text px-2 md:px-3 py-1 rounded-full text-xs md:text-sm font-medium">C</span>
+                        <span class="gradient-border-purple-blue bg-white tag-gradient-text px-2 md:px-3 py-1 rounded-full text-xs md:text-sm font-medium">C++</span>
+                        <span class="gradient-border-purple-blue bg-white tag-gradient-text px-2 md:px-3 py-1 rounded-full text-xs md:text-sm font-medium">Python</span>
+                        <span class="gradient-border-purple-blue bg-white tag-gradient-text px-2 md:px-3 py-1 rounded-full text-xs md:text-sm font-medium">DSA</span>
+                    </div>
+                </div>
+            </div>
+            <div class="glass-effect shadow-lg border-0 rounded-lg card-hover skill-card">
+                <div class="p-4 md:p-6">
+                    <h3 class="text-base md:text-lg font-semibold gradient-text-purple-blue mb-3 md:mb-4">Web Development</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="gradient-border-purple-blue bg-white tag-gradient-text px-2 md:px-3 py-1 rounded-full text-xs md:text-sm font-medium">HTML</span>
+                        <span class="gradient-border-purple-blue bg-white tag-gradient-text px-2 md:px-3 py-1 rounded-full text-xs md:text-sm font-medium">CSS</span>
+                    </div>
+                </div>
+            </div>
+            <div class="glass-effect shadow-lg border-0 rounded-lg card-hover skill-card">
+                <div class="p-4 md:p-6">
+                    <h3 class="text-base md:text-lg font-semibold gradient-text-purple-blue mb-3 md:mb-4">Tools</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="gradient-border-purple-blue bg-white tag-gradient-text px-2 md:px-3 py-1 rounded-full text-xs md:text-sm font-medium">MySQL</span>
+                        <span class="gradient-border-purple-blue bg-white tag-gradient-text px-2 md:px-3 py-1 rounded-full text-xs md:text-sm font-medium">VS Code</span>
+                    </div>
+                </div>
+            </div>
+            <div class="glass-effect shadow-lg border-0 rounded-lg card-hover skill-card">
+                <div class="p-4 md:p-6">
+                    <h3 class="text-base md:text-lg font-semibold gradient-text-purple-blue mb-3 md:mb-4">Databases</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="gradient-border-purple-blue bg-white tag-gradient-text px-2 md:px-3 py-1 rounded-full text-xs md:text-sm font-medium">MySQL</span>
+                    </div>
+                </div>
+            </div>
+            <div class="glass-effect shadow-lg border-0 rounded-lg card-hover skill-card">
+                <div class="p-4 md:p-6">
+                    <h3 class="text-base md:text-lg font-semibold gradient-text-purple-blue mb-3 md:mb-4">Concepts</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="gradient-border-purple-blue bg-white tag-gradient-text px-2 md:px-3 py-1 rounded-full text-xs md:text-sm font-medium">OOPS</span>
+                        <span class="gradient-border-purple-blue bg-white tag-gradient-text px-2 md:px-3 py-1 rounded-full text-xs md:text-sm font-medium">DBMS</span>
+                        <span class="gradient-border-purple-blue bg-white tag-gradient-text px-2 md:px-3 py-1 rounded-full text-xs md:text-sm font-medium">Operating Systems</span>
+                        <span class="gradient-border-purple-blue bg-white tag-gradient-text px-2 md:px-3 py-1 rounded-full text-xs md:text-sm font-medium">Computer Networks</span>
+                    </div>
+                </div>
+            </div>
+            <div class="glass-effect shadow-lg border-0 rounded-lg card-hover skill-card">
+                <div class="p-4 md:p-6">
+                    <h3 class="text-base md:text-lg font-semibold gradient-text-purple-blue mb-3 md:mb-4">Soft Skills</h3>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="gradient-border-purple-blue bg-white tag-gradient-text px-2 md:px-3 py-1 rounded-full text-xs md:text-sm font-medium">Decision Making</span>
+                        <span class="gradient-border-purple-blue bg-white tag-gradient-text px-2 md:px-3 py-1 rounded-full text-xs md:text-sm font-medium">Project Management</span>
+                        <span class="gradient-border-purple-blue bg-white tag-gradient-text px-2 md:px-3 py-1 rounded-full text-xs md:text-sm font-medium">Adaptability</span>
+                        <span class="gradient-border-purple-blue bg-white tag-gradient-text px-2 md:px-3 py-1 rounded-full text-xs md:text-sm font-medium">Problem Solving</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="education" class="py-16 md:py-20 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold gradient-text-purple-blue mb-8 md:mb-12 text-center">Education</h2>
+        <div class="space-y-4 md:space-y-6">
+            <div class="glass-effect shadow-lg border-0 rounded-lg card-hover">
+                <div class="p-4 md:p-6">
+                    <h3 class="text-lg md:text-xl font-semibold gradient-text-purple-blue mb-2">Bachelor of Technology – Computer Science</h3>
+                    <p class="text-gray-600 font-medium mb-2 md:mb-4 text-sm md:text-base">SRM University, Delhi NCR (Expected June 2027)</p>
+                    <p class="text-gray-700 font-medium text-sm md:text-base">CGPA: 7.3 (Till 4th Semester)</p>
+                </div>
+            </div>
+            <div class="glass-effect shadow-lg border-0 rounded-lg card-hover">
+                <div class="p-4 md:p-6">
+                    <h3 class="text-lg md:text-xl font-semibold gradient-text-purple-blue mb-2">Class XII – CBSE</h3>
+                    <p class="text-gray-600 font-medium mb-2 md:mb-4 text-sm md:text-base">Sachdeva Public School, New Delhi — 2023</p>
+                    <p class="text-gray-700 font-medium text-sm md:text-base">Score: 82%</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="projects" class="py-16 md:py-20 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold gradient-text-purple-blue mb-8 md:mb-12 text-center">Projects</h2>
+        <div class="grid gap-6 md:gap-8">
+            <div class="glass-effect shadow-lg border-0 rounded-lg card-hover">
+                <div class="p-4 md:p-6">
+                    <h3 class="text-lg md:text-xl font-semibold gradient-text-purple-blue mb-3 md:mb-4">Image Watermarking Tool</h3>
+                    <p class="text-gray-700 mb-3 md:mb-4 leading-relaxed text-sm md:text-base">
+                        Developed a Python script using OpenCV to add personalized watermarks to images such that users 
+                        can protect their digital property. Added user input for file selection and processed images to place 
+                        watermarks and blend them correctly.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="gradient-border-purple-blue bg-white tag-gradient-text px-2 md:px-3 py-1 rounded-full text-xs md:text-sm font-medium">Python</span>
+                        <span class="gradient-border-purple-blue bg-white tag-gradient-text px-2 md:px-3 py-1 rounded-full text-xs md:text-sm font-medium">OpenCV</span>
+                    </div>
+                </div>
+            </div>
+            <div class="glass-effect shadow-lg border-0 rounded-lg card-hover">
+                <div class="p-4 md:p-6">
+                    <h3 class="text-lg md:text-xl font-semibold gradient-text-purple-blue mb-3 md:mb-4">Gesture Controlled Virtual Mouse</h3>
+                    <p class="text-gray-700 mb-3 md:mb-4 leading-relaxed text-sm md:text-base">
+                        Developed a Python application utilizing MediaPipe to track hands in order to create a virtual mouse 
+                        interface. The user is able to move the cursor and click based on hand movement, enhancing user 
+                        input without the use of physical interfaces.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="gradient-border-purple-blue bg-white tag-gradient-text px-2 md:px-3 py-1 rounded-full text-xs md:text-sm font-medium">Python</span>
+                        <span class="gradient-border-purple-blue bg-white tag-gradient-text px-2 md:px-3 py-1 rounded-full text-xs md:text-sm font-medium">MediaPipe</span>
+                    </div>
+                </div>
+            </div>
+            <div class="glass-effect shadow-lg border-0 rounded-lg card-hover">
+                <div class="p-4 md:p-6">
+                    <h3 class="text-lg md:text-xl font-semibold gradient-text-purple-blue mb-3 md:mb-4">Sign Language Alphabet Detection</h3>
+                    <p class="text-gray-700 mb-3 md:mb-4 leading-relaxed text-sm md:text-base">
+                        Built a real-time sign language detection tool that recognizes English alphabets using hand gestures. 
+                        Used Python along with OpenCV and MediaPipe to capture and analyze hand landmarks. Enabled 
+                        gesture-to-alphabet mapping through live video input, providing an accessible and interactive way to 
+                        detect sign language.
+                    </p>
+                    <div class="flex flex-wrap gap-2">
+                        <span class="gradient-border-purple-blue bg-white tag-gradient-text px-2 md:px-3 py-1 rounded-full text-xs md:text-sm font-medium">Python</span>
+                        <span class="gradient-border-purple-blue bg-white tag-gradient-text px-2 md:px-3 py-1 rounded-full text-xs md:text-sm font-medium">OpenCV</span>
+                        <span class="gradient-border-purple-blue bg-white tag-gradient-text px-2 md:px-3 py-1 rounded-full text-xs md:text-sm font-medium">MediaPipe</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="experience" class="py-16 md:py-20 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto">
+        <h2 class="text-3xl md:text-4xl font-bold gradient-text-purple-blue mb-8 md:mb-12 text-center">Experience & Leadership</h2>
+        <div class="space-y-4 md:space-y-6">
+            <div class="glass-effect shadow-lg border-0 rounded-lg card-hover">
+                <div class="p-4 md:p-6">
+                    <h3 class="text-base md:text-lg font-semibold gradient-text-purple-blue mb-3 md:mb-4">Team Coordinator – Academic Projects</h3>
+                    <p class="text-gray-700 leading-relaxed text-sm md:text-base">
+                        Took the lead in organizing group coursework by setting up discussions, dividing tasks based on everyone's strengths, and 
+                        making sure we stayed on track. Enjoyed keeping the team motivated and ensuring we worked smoothly together.
+                    </p>
+                </div>
+            </div>
+            <div class="glass-effect shadow-lg border-0 rounded-lg card-hover">
+                <div class="p-4 md:p-6">
+                    <h3 class="text-base md:text-lg font-semibold gradient-text-purple-blue mb-3 md:mb-4">Peer Mentor – Programming Help</h3>
+                    <p class="text-gray-700 leading-relaxed text-sm md:text-base">
+                        Often helped classmates with their doubts in Java, Python, and DSA. Whether it was explaining concepts or debugging 
+                        code, I liked making complex things easier for others and encouraging collaborative learning.
+                    </p>
+                </div>
+            </div>
+            <div class="glass-effect shadow-lg border-0 rounded-lg card-hover">
+                <div class="p-4 md:p-6">
+                    <h3 class="text-base md:text-lg font-semibold gradient-text-purple-blue mb-3 md:mb-4">Self-Learner & Initiative Taker</h3>
+                    <p class="text-gray-700 leading-relaxed text-sm md:text-base">
+                        I enjoy picking up new tech skills on my own—whether it's a new Python library or a backend concept. I've always been 
+                        curious and proactive, and I like applying what I learn to small projects or solving real problems.
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section id="contact" class="py-16 md:py-20 px-4 sm:px-6 lg:px-8">
+    <div class="max-w-4xl mx-auto text-center">
+        <h2 class="text-3xl md:text-4xl font-bold gradient-text-purple-blue mb-8 md:mb-12">Get In Touch</h2>
+        <div class="max-w-md mx-auto glass-effect shadow-xl border-0 rounded-lg">
+            <div class="p-6 md:p-8">
+                <p class="text-gray-700 mb-4 md:mb-6 text-responsive leading-relaxed">
+                    I'm always open to discussing new opportunities and interesting projects.
+                </p>
+                <div class="flex items-center justify-center gap-3 text-base md:text-lg">
+                    <i data-lucide="mail" class="w-5 h-5 text-purple-600 flex-shrink-0"></i>
+                    <a href="mailto:varun200517@gmail.com" class="text-purple-600 hover:text-purple-800 font-medium transition-colors duration-300 touch-button break-all">
+                        varun200517@gmail.com
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+<footer class="py-6 md:py-8 px-4 sm:px-6 lg:px-8 bg-gradient-to-r from-gray-900 to-gray-800 text-white">
+    <div class="max-w-4xl mx-auto text-center">
+        <p class="text-sm md:text-base">&copy; 2024 Varun Bhasin. All rights reserved.</p>
+    </div>
+</footer>
+<script src="script.js"></script>
+<script>
+    document.addEventListener('DOMContentLoaded', function() {
+        lucide.createIcons();
+    });
+</script>
+</body>
+</html>
